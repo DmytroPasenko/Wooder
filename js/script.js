@@ -2,6 +2,7 @@ window.onload = function() {
     var scrolled = 0
     var timer
     var firstScroll = document.getElementById('furniture').getBoundingClientRect().top - 35
+    var scrolling = document.getElementById('scrolling')
 
     document.getElementById('scroll').onclick = function() {
         scrollToFirstBlock()
@@ -18,6 +19,7 @@ window.onload = function() {
             clearTimeout(timer)
             scrolled = firstScroll
             window.scrollTo(0, scrolled)
+            scrolling.style.opacity = 1
         }
     }
 }
