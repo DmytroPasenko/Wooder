@@ -1,0 +1,10 @@
+footer {
+    background: url(../img/footer.png);
+    padding: 15px 0 10px 0;
+}
+
+footer h2 {
+    margin: 0;
+    font-size: 24pt;
+    text-align: center;
+}

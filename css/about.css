@@ -1,0 +1,27 @@
+.about {
+    margin-bottom: 150px;;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+}
+
+.a-line {
+    width: 350px;
+    height: 2px;
+    background-color: black;
+    margin-top: -11%;
+    margin-left: -10%;
+}
+
+.about-us img {
+    margin-left: 5%
+}
+
+.about-us .description {  
+    margin-right: 5%;
+    margin-left: -10%;
+}

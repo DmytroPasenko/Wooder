@@ -1,0 +1,87 @@
+.watch-video {
+    background: url(../img/watch-bg.png);    
+    padding: 7vh 0 7vh 0;
+    margin-bottom: 150px;
+}
+
+.watch {
+    width: auto;
+    height: 70vh;
+    border: 2px solid #bea67c;
+}
+
+.complexity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70vh;
+}
+
+.watch h3 {
+    font-size: 48pt;
+    color: #bea67c;
+    letter-spacing: 5px;
+    margin: 0 0 30px 0;
+    transform: scale(1, 0.80);
+    width: 650px;
+}
+
+.watch p {
+    font-size: 14pt;
+    color: white;
+    text-transform: none;
+    font-family: "ProximaNova-Regular";
+    font-weight: normal;
+    margin-bottom: 50px;
+    width: 400px;
+}
+
+.w-line {
+    margin: -23% 30px 0 30px;
+    width: 150px;
+    height: 2px;
+    background-color: #bea67c;
+}
+
+.watch-button {
+    background: transparent;
+    border: 2px solid white;
+    height: 60px;
+    width: 305px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: 0.6s;
+}
+
+.watch-button:hover {
+    background: white;
+    
+}
+
+.watch-button p {
+    letter-spacing: 3px;
+    font-size: 18pt;
+    font-family: "ProximaNova";
+    color: white;
+    text-transform: uppercase;
+    transform: scale(1, 0.80);
+    margin-top: 52px;
+    transition: 0.6s;
+}
+
+.watch-button:hover p {
+    color: black;
+}
+
+.watch-button img {
+    height: 25px;
+    width: 25px;
+    filter: brightness(0) invert(1);
+    margin: 0 0 0 30px;
+    transition: 0.6s;
+}
+
+.watch-button:hover img {
+    filter: brightness(0);
+}
