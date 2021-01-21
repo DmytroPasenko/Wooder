@@ -84,7 +84,7 @@ h3 {
     display: flex;
     flex-direction: column;
     position: fixed;
-    bottom: 15vh;
+    bottom: 20vh;
     right: 30px;
     transition: 0.6s;
 }
@@ -124,6 +124,33 @@ h3 {
 }
 
 .down-arrow {
-    margin-top: 100px;
     transition: 0.6s;
+}
+
+.white-up-arrow {
+    filter: brightness(0) invert(1);
+    transition: 0.6s;
+}
+
+.white-down-arrow {
+    filter: brightness(0) invert(1);
+    transition: 0.6s;
+}
+
+@media (min-width: 1400px) {
+    .scrolling {
+        bottom: 25vh;
+    }
+}
+
+@media (min-width: 1600px) {
+    .scrolling {
+        bottom: 30vh;
+    }
+}
+
+@media (min-width: 1920px) {
+    .scrolling {
+        bottom: 35vh;
+    }
 }
