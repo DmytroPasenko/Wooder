@@ -87,6 +87,7 @@ h3 {
     bottom: 20vh;
     right: 30px;
     transition: 0.6s;
+    visibility: hidden;
 }
 
 .scrolling:hover {
@@ -105,12 +106,17 @@ h3 {
 .scrolling .mouse-scroll {
     margin: 0;
     filter: invert(1);
+    transition: 0.6s;
 }
 
 .scrolling button {
     margin: -35px 0 -35px 0;
     border: none;
     background-color: transparent;
+}
+
+.scrolling button:focus {
+    outline: none;
 }
 
 .arrow {

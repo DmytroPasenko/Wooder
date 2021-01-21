@@ -6,21 +6,25 @@ window.onload = function() {
     var secondScroll = document.getElementById('decor').getBoundingClientRect().top - 35
     var thirdScroll = document.getElementById('quality').getBoundingClientRect().top - 35
     var fourthScroll = document.getElementById('complexity').getBoundingClientRect().top - 35
-    var lastScroll = document.getElementById ('footer').getBoundingClientRect().bottom    
+    var lastScroll = document.getElementById ('footer').getBoundingClientRect().bottom   
 
+    var scrolling = document.getElementById('scrolling')
     var mouseScr = document.getElementById('mouse-scroll')
     var upArrowScr = document.getElementById('up-arrow')
     var downArrowScr = document.getElementById('down-arrow')
 
     document.getElementById('scroll').onclick = function() {
         scrolled = 0
+        window.scrollTo(0, 0)
         scrollToFirstBlock()
+
+        scrolling.style.visibility = "visible"
     }    
 
     function scrollToFirstBlock() {
         if (scrolled < firstScroll) {
-            window.scrollTo(0, 0)
             scrolled = scrolled + 12
+            console.log(scrolled)
             timer = setTimeout(scrollToFirstBlock, .1)
             window.scrollTo(0, scrolled)
         }
@@ -34,33 +38,113 @@ window.onload = function() {
     document.getElementById('up-arrow').onclick = function() {
         if (scrolled == firstScroll) {
             scrollToTop()         
+
+            upArrowScr.blur()
         }
 
         function scrollToTop() {
+            if (scrolled == firstScroll) {
+                scrolling.style.visibility = "hidden"
+                downArrowScr.style.opacity = "1"
+                scrolling.style.bottom = "20vh"
+            }
             if (scrolled < firstScroll || scrolled == firstScroll) {
                 scrolled = scrolled - 12
+                console.log(scrolled)
                 timer = setTimeout(scrollToTop, .1)
                 window.scrollTo(0, scrolled)
             }
-            else {
+            if (scrolled < 0) {
                 clearTimeout(timer)
                 scrolled = 0
                 window.scrollTo(0, 0)
             }
-        }        
+        }  
+        
+        if (scrolled == secondScroll) {
+            scrollToFirstFromSecond()   
+            
+            upArrowScr.blur()
+        }
+
+        function scrollToFirstFromSecond() {
+            if (scrolled < secondScroll || scrolled == secondScroll) {
+                scrolled = scrolled - 12
+                console.log(scrolled)
+                timer = setTimeout(scrollToFirstFromSecond, .1)
+                window.scrollTo(0, scrolled)
+            }
+            if (scrolled < firstScroll) {
+                clearTimeout(timer)
+                scrolled = firstScroll
+                window.scrollTo(0, firstScroll)
+            }
+        } 
+
+        if (scrolled == thirdScroll) {
+            scrollToSecondFromThird()   
+            
+            upArrowScr.blur()
+        }
+
+        function scrollToSecondFromThird() {
+            if (scrolled < thirdScroll || scrolled == thirdScroll) {
+                scrolled = scrolled - 12
+                console.log(scrolled)
+                timer = setTimeout(scrollToSecondFromThird, .1)
+                window.scrollTo(0, scrolled)
+            }
+            if (scrolled < secondScroll) {
+                clearTimeout(timer)
+                scrolled = secondScroll
+                window.scrollTo(0, secondScroll)
+            }
+        } 
+
+        if (scrolled == fourthScroll) {
+            scrollToThirdFromFourth()   
+            
+            upArrowScr.blur()
+        }
+
+        function scrollToThirdFromFourth() {
+            if (scrolled == fourthScroll) {
+                mouseScr.style.filter = "brightness(1) invert(1)"
+                upArrowScr.classList.remove("white-up-arrow")
+                downArrowScr.classList.remove("white-down-arrow")
+            }
+            if (scrolled < fourthScroll || scrolled == fourthScroll) {
+                scrolled = scrolled - 12
+                console.log(scrolled)
+                timer = setTimeout(scrollToThirdFromFourth, .1)
+                window.scrollTo(0, scrolled)
+            }
+            if (scrolled < thirdScroll) {
+                clearTimeout(timer)
+                scrolled = thirdScroll
+                window.scrollTo(0, thirdScroll)
+            }
+        } 
 
         if (scrolled == lastScroll) {
             scrollToHome()
 
+            upArrowScr.blur()
         }
 
         function scrollToHome() {
-            if (scrolled < lastScroll || scrolled == firstScroll) {
-                scrolled = scrolled - 12
-                timer = setTimeout(scrollToHome, .1)
+            if (scrolled == lastScroll) {
+                scrolling.style.visibility = "hidden"
+                downArrowScr.style.opacity = "1"
+                scrolling.style.bottom = "20vh"
+            }
+            if (scrolled < lastScroll || scrolled == lastScroll) {
+                scrolled = scrolled - 100
+                console.log(scrolled)
+                timer = setTimeout(scrollToHome, 1)
                 window.scrollTo(0, scrolled)
             }
-            else {
+            if (scrolled < 0) {
                 clearTimeout(timer)
                 scrolled = 0
                 window.scrollTo(0, 0)
@@ -71,11 +155,14 @@ window.onload = function() {
     document.getElementById('down-arrow').onclick = function() {
         if (scrolled == firstScroll) {
             scrollToSecondBlock()
+
+            downArrowScr.blur()
         }
 
         function scrollToSecondBlock() {
             if (scrolled == firstScroll || scrolled > firstScroll & scrolled < secondScroll) {
                 scrolled = scrolled + 12
+                console.log(scrolled)
                 timer = setTimeout(scrollToSecondBlock, .1)
                 window.scrollTo(0, scrolled)
             }
@@ -88,11 +175,14 @@ window.onload = function() {
 
         if (scrolled == secondScroll) {
             scrollToThirdBlock()
+
+            downArrowScr.blur()
         }
 
         function scrollToThirdBlock() {
             if (scrolled == secondScroll || scrolled > secondScroll & scrolled < thirdScroll) {
                 scrolled = scrolled + 12
+                console.log(scrolled)
                 timer = setTimeout(scrollToThirdBlock, .1)
                 window.scrollTo(0, scrolled)
             }
@@ -105,12 +195,8 @@ window.onload = function() {
 
         if (scrolled == thirdScroll) {
             scrollToFourthBlock() 
-            
-            // mouseScr.className = "white-mouse-scroll"
-            // upArrowScr.className = "white-up-arrow"
-            // downArrowScr.className = "white-down-arrow"
-            // upArrowBtn.className = "white-arrow-button"
-            // downArrowBtn.className = "white-arrow-button"
+
+            downArrowScr.blur()
 
             mouseScr.style.filter = "brightness(0) invert(1)"
             upArrowScr.classList.add("white-up-arrow")
@@ -120,6 +206,7 @@ window.onload = function() {
         function scrollToFourthBlock() {
             if (scrolled == thirdScroll || scrolled > thirdScroll & scrolled < fourthScroll) {
                 scrolled = scrolled + 12
+                console.log(scrolled)
                 timer = setTimeout(scrollToFourthBlock, .1)
                 window.scrollTo(0, scrolled)
             }
@@ -133,14 +220,20 @@ window.onload = function() {
         if (scrolled == fourthScroll) {
             scrollToBottom()
 
+            downArrowScr.blur()
+
             mouseScr.style.filter = "brightness(1) invert(1)"
             upArrowScr.classList.remove("white-up-arrow")
             downArrowScr.classList.remove("white-down-arrow")
+
+            downArrowScr.style.opacity = "0"
+            scrolling.style.bottom = "5vh"
         }        
 
         function scrollToBottom() {
             if (scrolled == fourthScroll || scrolled > fourthScroll & scrolled < lastScroll) {
                 scrolled = scrolled + 12
+                console.log(scrolled)
                 timer = setTimeout(scrollToBottom, .1)
                 window.scrollTo(0, scrolled)
             }
