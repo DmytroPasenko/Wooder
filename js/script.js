@@ -13,6 +13,16 @@ window.onload = function() {
     var upArrowScr = document.getElementById('up-arrow')
     var downArrowScr = document.getElementById('down-arrow')
 
+    var firstPlay = document.getElementById('first-play')
+    var secondPlay = document.getElementById('second-play')
+    var thirdPlay = document.getElementById('third-play')
+    var firstPause = document.getElementById('first-pause')
+    var secondPause = document.getElementById('second-pause')
+    var thirdPause = document.getElementById('third-pause')
+    var firstVideo = document.getElementById('first-video')
+    var secondVideo = document.getElementById('second-video')
+    var thirdVideo = document.getElementById('third-video')
+
     document.getElementById('scroll').onclick = function() {
         scrolled = 0
         window.scrollTo(0, 0)
@@ -46,7 +56,19 @@ window.onload = function() {
             if (scrolled == firstScroll) {
                 scrolling.style.visibility = "hidden"
                 downArrowScr.style.opacity = "1"
-                scrolling.style.bottom = "20vh"
+
+                if (screen.width >= 1170) {
+                    scrolling.style.bottom = "20vh"
+                }
+                if (screen.width >= 1400) {
+                    scrolling.style.bottom = "25vh"
+                }
+                if (screen.width >= 1600) {
+                    scrolling.style.bottom = "30vh"
+                }
+                if (screen.width >= 1920) {
+                    scrolling.style.bottom = "35vh"
+                }
             }
             if (scrolled < firstScroll || scrolled == firstScroll) {
                 scrolled = scrolled - 12
@@ -243,5 +265,47 @@ window.onload = function() {
                 window.scrollTo(0, scrolled)
             }
         }
+    }
+
+    document.getElementById('first-play').onclick = function() { 
+        firstPlay.style.visibility = "hidden"
+        firstPause.style.visibility = "visible"
+
+        firstVideo.play()
+    }
+
+    document.getElementById('first-pause').onclick = function () {
+        firstPlay.style.visibility = "visible"
+        firstPause.style.visibility = "hidden"
+
+        firstVideo.pause()
+    }
+
+    document.getElementById('second-play').onclick = function() { 
+        secondPlay.style.visibility = "hidden"
+        secondPause.style.visibility = "visible"
+
+        secondVideo.play()
+    }
+
+    document.getElementById('second-pause').onclick = function () {
+        secondPlay.style.visibility = "visible"
+        secondPause.style.visibility = "hidden"
+
+        secondVideo.pause()
+    }
+
+    document.getElementById('third-play').onclick = function() { 
+        thirdPlay.style.visibility = "hidden"
+        thirdPause.style.visibility = "visible"
+
+        thirdVideo.play()
+    }
+
+    document.getElementById('third-pause').onclick = function () {
+        thirdPlay.style.visibility = "visible"
+        thirdPause.style.visibility = "hidden"
+
+        thirdVideo.pause()
     }
 }

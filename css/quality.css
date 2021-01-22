@@ -66,3 +66,38 @@ h4 {
     background-color: darkgray;
     border-radius: 50%;
 }
+
+.play {
+    width: 70px;
+    height: 70px;
+    filter: brightness(0) invert(1);
+    position: absolute;
+    margin-top: 110px;
+    transition: 0.2s;
+    opacity: 0.8;
+}
+
+.play:hover {
+    width: 74px;
+    height: 74px;
+    margin-top: 108px;
+    opacity: 1;
+}
+
+.pause {
+    width: 60px;
+    height: 60px;
+    filter: brightness(0) invert(1);
+    position: absolute;
+    margin-top: 115px;
+    transition: 0.2s;
+    opacity: 0.3;
+    visibility: hidden;
+}
+
+.pause:hover {
+    width: 64px;
+    height: 64px;
+    margin-top: 113px;
+    opacity: 1;
+}
