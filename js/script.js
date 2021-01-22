@@ -268,44 +268,40 @@ window.onload = function() {
     }
 
     document.getElementById('first-play').onclick = function() { 
-        firstPlay.style.visibility = "hidden"
-        firstPause.style.visibility = "visible"
-
-        firstVideo.play()
+        playVideo(firstPlay, firstPause, firstVideo)
     }
 
     document.getElementById('first-pause').onclick = function () {
-        firstPlay.style.visibility = "visible"
-        firstPause.style.visibility = "hidden"
-
-        firstVideo.pause()
+        pauseVideo(firstPlay, firstPause, firstVideo)
     }
 
     document.getElementById('second-play').onclick = function() { 
-        secondPlay.style.visibility = "hidden"
-        secondPause.style.visibility = "visible"
-
-        secondVideo.play()
+        playVideo(secondPlay, secondPause, secondVideo)
     }
 
     document.getElementById('second-pause').onclick = function () {
-        secondPlay.style.visibility = "visible"
-        secondPause.style.visibility = "hidden"
-
-        secondVideo.pause()
+        pauseVideo(secondPlay, secondPause, secondVideo)
     }
 
     document.getElementById('third-play').onclick = function() { 
-        thirdPlay.style.visibility = "hidden"
-        thirdPause.style.visibility = "visible"
-
-        thirdVideo.play()
+        playVideo(thirdPlay, thirdPause, thirdVideo)
     }
 
     document.getElementById('third-pause').onclick = function () {
-        thirdPlay.style.visibility = "visible"
-        thirdPause.style.visibility = "hidden"
+        pauseVideo(thirdPlay, thirdPause, thirdVideo)
+    }
 
-        thirdVideo.pause()
+    function playVideo(play, pause, video) {
+        play.style.visibility = "hidden"
+        pause.style.visibility = "visible"
+
+        video.play()
+    }
+
+    function pauseVideo(play, pause, video) {
+        play.style.visibility = "visible"
+        pause.style.visibility = "hidden"
+
+        video.pause()
     }
 }
