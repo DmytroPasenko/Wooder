@@ -80,6 +80,23 @@ h3 {
     text-align: right;
 }
 
+.furniture-decor-images {
+    height: 450px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.furniture-decor-back {
+    position: absolute;
+    opacity: 0;
+    transition: 1.2s;
+}
+
+.furniture-decor-back:hover {
+    opacity: 1;
+}
+
 .scrolling {
     display: flex;
     flex-direction: column;
