@@ -24,6 +24,10 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+html, body {
+	overflow-y: hidden;
+}
+
 body {
 	line-height: 1;
 }
@@ -52,3 +56,4 @@ table {
 	margin: 0 auto;
 	font-weight: normal;
 }
+
