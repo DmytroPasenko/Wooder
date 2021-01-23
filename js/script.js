@@ -27,7 +27,7 @@ window.onload = function() {
         e = e || window.event
         var c = e.keyCode
         if(c>36 && c<41 || c>32 && c<37) return false
-    }        
+    }     
 
     document.getElementById('scroll').onclick = function() {
         scrolled = 0
@@ -311,3 +311,7 @@ window.onload = function() {
         video.pause()
     }
 }
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
